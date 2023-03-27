@@ -1,21 +1,22 @@
 import './App.css';
-import imge from './image/myself.png'
+import imge from './image/myself.png';
+import {Routes, Route, Router} from "react-router-dom";
+import Education from './education';
+import Projects from './projects';
+import Aboutme from './aboutme';
+import Home from './home';
 
 
 
 function App() {
   return (
     <div className="App">
-      <body>
-        <h1 className='header'> Samiul Ahmed</h1>
-        <img className='image' alt='my pic' src={imge} />
-
-        <div>
-          <button className='firstpart'>
-            <h2>Education</h2>
-          </button>
-        </div>
-      </body>
+      <Routes>
+        <Route path='/' element={<Home />}/>
+        <Route path='/education' element={<Education/>}/>
+        <Route path='/project' element={<Projects/>}/>
+        <Route path='/aboutme' element={<Aboutme/>}/>
+      </Routes>
     </div>
   );
 }
